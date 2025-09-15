@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+requests
+beautifulsoup4
+sqlalchemy
+psycopg2-binary
+tldextract
+python-dotenv
+playwright
+openai
+pytest
+hvac
+serpapi
+langgraph>=0.2.15
+langchain>=0.2.11

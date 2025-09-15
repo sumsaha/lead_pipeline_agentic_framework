@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lead-pipeline
+  labels:
+    app: lead-pipeline
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lead-pipeline
+  template:
+    metadata:
+      labels:
+        app: lead-pipeline
+    spec:
+      containers:
+        - name: lead-pipeline
+          image: your-registry/lead-pipeline:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DATABASE_URL
+              value: postgresql://demo:demo@postgres-service:5432/leads
+            - name: PLAYWRIGHT_ENABLED
+              value: "1"
